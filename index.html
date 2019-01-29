@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BowMasters</title>
+    <script src="js/libraries/phaser.js"></script>
+    <script src="js/libraries/phaser-spine.js"></script>
+    <script src="js/boot.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/game.js"></script>
+</head>
+
+<body>
+    <script>
+        const game = new Phaser.Game(1920, 1080, Phaser.AUTO, 'game');
+
+        (function () {
+            game.state.add('Boot', Bowmasters.Boot);
+            game.state.add('Preloader', Bowmasters.Preloader);
+            game.state.add('Game', Bowmasters.Game);
+            game.state.start('Boot');
+        })();
+    </script>
+
+</body>
+
+</html>
